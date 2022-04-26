@@ -7,7 +7,7 @@
 
 <section>
     <div>
-        <h3>{{ zombie.name }}</h3>
+        <a href="/zombies/{{ zombie.id }}"><h3>{{ zombie.name }}</h3></a>
         <p>{{ zombie.zombie_type.name }}</p>
         <a href="/zombies/{{ zombie.id }}/edit">Edit</a>
         <form action="/zombies/{{ zombie.id }}/delete" method="POST">

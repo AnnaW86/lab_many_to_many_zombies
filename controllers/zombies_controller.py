@@ -31,6 +31,12 @@ def create_zombie():
     return redirect("/zombies")
 
 
+# SHOW
+@zombies_blueprint.route("/zombies/<id>")
+def show_zombie(id):
+    victims = zombie_repository.victims(id)
+    return render_template("zombies/show.html", zombie=zombie_repository.select(id), victims = victims)
+
 # EDIT
 @zombies_blueprint.route("/zombies/<id>/edit")
 def edit_zombie(id):
